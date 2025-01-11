@@ -6,6 +6,12 @@ import { locations } from "../../constants/dropDownMenu.js";
 export default class JobController {
   getHomePage(req, res) {
     res.render("HeroSections");
+    console.log(
+      "email:email1@example.com,password:password1,options:recruiter"
+    );
+    console.log(
+      "email: email5@example.com,password: password5,options: jobseeker"
+    );
   }
   getJobs(req, res) {
     const jobs = JobModel.getJobs();
