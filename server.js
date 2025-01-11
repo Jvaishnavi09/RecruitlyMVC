@@ -4,7 +4,6 @@ import UserController from "./src/Controller/user.controller.js";
 import ApplicantController from "./src/Controller/applicant.controller.js";
 import express from "express";
 import expressEjsLayouts from "express-ejs-layouts";
-
 import validateRegisterForm from "./src/Middlewares/RegisterFormvalidation.middleware.js";
 import validateLoginForm from "./src/Middlewares/LoginFormvalidation.middleware.js";
 import paramroutevalidation from "./src/Middlewares/paramroutevalidation.middleware.js";
@@ -104,3 +103,5 @@ server.use((err, req, res, next) => {
 });
 
 server.listen(3001);
+
+export default server;
