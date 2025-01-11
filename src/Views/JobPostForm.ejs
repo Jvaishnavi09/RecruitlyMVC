@@ -1,0 +1,121 @@
+<div
+  class="d-flex flex-column justify-content-center p-5 vw-50 m-0 m-md-5 rounded"
+>
+  <h3 class="text-center">New Jobpost Form</h3>
+  <% if(data.length!==0) {%>
+
+  <div class="alert alert-danger" role="alert"><%= data %></div>
+  <%}%>
+  <form
+    action="/newjobs"
+    method="post"
+    class="border bg-body-tertiary p-5 mt-2"
+  >
+    <div class="mb-3">
+      <label for="jobCategory" class="form-label">Select Job Category </label>
+
+      <select class="form-select" id="jobCategory" name="jobCategory" required>
+        <option value="" disabled selected>Select from options</option>
+        <% if (jobCate.length > 0) { %> <% jobCate.forEach(jobCat => { %>
+        <option>&nbsp;<%= jobCat %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="jobdesignation" class="form-label"
+        >Select Job Designation
+      </label>
+
+      <select
+        class="form-select"
+        id="jobdesignation"
+        name="jobdesignation"
+        required
+      >
+        <option value="" disabled selected>Select from options</option>
+        <% if (jobDesi.length > 0) { %> <% jobDesi.forEach(jobDes => { %>
+        <option>&nbsp;<%= jobDes %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="jobLocation" class="form-label">Select Job Location </label>
+      <select class="form-select" id="jobLocation" name="jobLocation" required>
+        <option value="" disabled selected>Select from options</option>
+        <% if (locations.length > 0) { %> <% locations.forEach(loca => { %>
+        <option>&nbsp;<%= loca %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="companyname" class="form-label">Enter Company name </label>
+      <input
+        type="text"
+        class="form-control"
+        name="companyname"
+        id="companyname"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Minimum Pay : </span>
+      <input
+        type="number"
+        class="form-control"
+        fdprocessedid="55frr9"
+        name="minimumpay"
+      />
+      <div class="input-group">
+        <input
+          type="number"
+          class="form-control"
+          fdprocessedid="069kft"
+          name="maximumpay"
+        />
+        <span class="input-group-text"> : Maximum pay </span>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="applyby" class="form-label">apply By </label>
+      <input type="date" class="form-control" name="applyby" id="applyby" />
+    </div>
+
+    <div class="mb-3">
+      <label for="skillsrequired" class="form-label">Skills Required : </label>
+
+      <select
+        class="form-select"
+        id="skillsrequired"
+        name="skillsrequired"
+        multiple
+        required
+      >
+        <option value="" disabled selected>Select from options</option>
+        <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
+        <option>&nbsp;<%= skill %>&nbsp;</option>
+        <% }); %> <% } else { %>
+        <option>No specific skills required</option>
+        <% } %>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="numberofopenings" class="form-label"
+        >Number of openings :
+      </label>
+      <input
+        type="number"
+        step="1"
+        class="form-control"
+        name="numberofopenings"
+        id="numberofopenings"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

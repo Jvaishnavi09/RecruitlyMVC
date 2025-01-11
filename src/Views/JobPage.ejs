@@ -1,0 +1,53 @@
+<div id="JobPageSearchBarContainer m-3">
+  <form class="d-flex justify-content-center vw-100 mt-3">
+    <input
+      class="form-control me-0"
+      type="search"
+      style="width: 300px"
+      placeholder="Search for jobs / Designations"
+      aria-label="Search"
+      id="searchBar"
+      autofocus
+      onchange="handleChangeSearch()"
+    />
+    <button
+      type="submit"
+      class="btn btn-primary"
+      id="searchButton"
+      onclick="handleSearch(this)"
+    >
+      Search
+    </button>
+  </form>
+</div>
+<div
+  class="container-fluid d-flex justify-content-center align-items-center align-items-stretch flex-wrap gap-3 mt-4"
+>
+  <% jobs.forEach( job => { %>
+  <div
+    class="card cardJob"
+    data-id="<%= job.id %>"
+    style="width: 20rem"
+    onclick="handleClick(this)"
+  >
+    <div class="card-body d-flex gap-2 flex-column">
+      <h5 class="card-title"><%= job.jobdesignation %></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">
+        <%= job.companyname %>
+      </h6>
+      <p class="card-text">
+        <img src="placeholder.png" class="card-symbols" alt="location" />
+        <%= job.joblocation %>
+      </p>
+      <p class="card-text">
+        <img src="bar-chart.png" class="card-symbols" alt="number" /> Number Of
+        Opennings : <%= job.numberofopenings %>
+      </p>
+      <div class="text-body-secondary w-100" style="height: 20px">
+        Job posted on : <%= job.jobposted %>
+      </div>
+    </div>
+  </div>
+
+  <% }); %>
+</div>

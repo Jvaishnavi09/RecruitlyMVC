@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@react-oauth/google": "^0.12.1",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.9",
+    "passport-google-oauth": "^2.0.0"
+  },
+  "name": "recuitly",
+  "version": "1.0.0",
+  "description": "platform for recuitment HR's and professionals to find job.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Jvaishnavi",
+  "license": "ISC",
+  "type": "module"
+}

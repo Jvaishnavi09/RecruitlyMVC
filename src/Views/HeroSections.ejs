@@ -1,0 +1,57 @@
+<section
+  class="d-flex flex-column flex-lg-row vh-50 gap-3 justify-content-center align-items-center"
+>
+  <div
+    class="container-fluid d-flex flex-column justify-content-center align-items-center mt-5 vw-75"
+  >
+    <h1
+      class="rubik-vinyl-regular justify-content-center mt-5 text-center position-relative"
+    >
+      Find the Jobs you love Most
+      <img
+        src="love.png"
+        style="height: 45px; width: 45px; transform: rotate(35deg)"
+        alt="love"
+        class="position-absolute"
+      />
+    </h1>
+
+    <form class="d-flex mt-5" role="search">
+      <input
+        class="form-control me-0"
+        style="width: 300px"
+        type="search"
+        placeholder="Search for jobs / Designations"
+        aria-label="Search"
+        onclick="handleSearchHero()"
+      />
+    </form>
+    <% if(!login){ %>
+    <div class="mt-5">
+      <a href="login"
+        ><button
+          type="button"
+          class="btn btn-primary btn-lg rounded-0 rounded-start"
+        >
+          Login
+        </button></a
+      >
+      <a href="register">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg rounded-0 rounded-end"
+        >
+          Register
+        </button></a
+      >
+    </div>
+    <% } %>
+  </div>
+  <div class="vw-25">
+    <img
+      src="Lovepik_com-401675249-recruitment.png"
+      style="height: 400px; width: 580px"
+      alt="HeresectionImage"
+    />
+  </div>
+</section>

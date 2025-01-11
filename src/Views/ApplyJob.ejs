@@ -1,0 +1,47 @@
+<div class="rounded container vw-80 d-flex justify-content-center">
+  <% if(error.length!==0) {%>
+  <div class="alert alert-danger" role="alert"><%= error %></div>
+  <%}%>
+
+  <form
+    action="/jobs/<%=id%>/apply"
+    method="post"
+    enctype="multipart/form-data"
+    class="border p-5 rounded"
+  >
+    <div class="mb-3">
+      <label for="InputName" class="form-label">Enter Your Name : </label>
+      <input type="text" class="form-control" id="InputName" name="InputName" />
+    </div>
+    <div class="mb-3">
+      <label for="InputEmail" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="InputEmail"
+        name="InputEmail"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="InputContact" class="form-label">Contact Number : </label>
+      <input
+        type="tel"
+        class="form-control"
+        id="InputContact"
+        name="InputContact"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="InputResume" class="form-label">Upload your Resume : </label>
+      <input
+        type="file"
+        class="form-control"
+        id="InputResume"
+        accept="application/pdf"
+        name="resume"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

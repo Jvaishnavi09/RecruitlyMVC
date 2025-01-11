@@ -1,0 +1,48 @@
+<div class="d-flex flex-column justify-content-center m-3 rounded">
+  <h1 class="text-center">Login</h1>
+  <% if(data.length!==0) {%>
+
+  <div class="alert alert-danger" role="alert"><%= data %></div>
+  <%}%>
+  <div class="card w-65 mx-auto mt-3 px-5 py-3">
+    <div class="card-body">
+      <form action="/login" method="post">
+        <div class="mb-3" style="width: 250px">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address :
+          </label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3" style="width: 250px">
+          <label for="exampleInputPassword1" class="form-label"
+            >Password :
+          </label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+          />
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p>or</p>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <a href="/register"
+      ><button class="btn btn-primary">Click to register</button></a
+    >
+  </div>
+</div>

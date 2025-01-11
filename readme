@@ -1,0 +1,35 @@
+Job Portal Application
+
+Description
+
+This is a Job Portal Website built using the MVC (Model View Controller) architecture with ExpressJS. The application allows recruiters to post and manage job listings and provides a user-friendly platform for job seekers to find and apply for suitable roles. It utilizes server-side rendering with EJS and ES6 modules to ensure modularity and maintainability.
+
+Features
+
+MVC Architecture:
+
+Separation of concerns: data handling, interface rendering, and routing control.
+
+Server-Side Templating with EJS: Dynamic HTML generation based on server data.
+
+ES6 Modules:Ensures code modularity and organization.
+
+Session and Cookie Management:Express sessions for user session management.Cookie-based tracking for the last visit.
+
+In-Memory Data Structures:For user and job management operations.
+
+User Authentication:Login and registration system for recruiters.
+
+Job Search and Application:Job seekers can view all jobs, view details of specific jobs, and apply by providing their details.
+
+Job Management for Recruiters:Recruiters can create, update, delete, and view job postings with field validation.
+
+Applicant Management:Recruiters can view all applicants of a job, including their submitted resumes.
+
+Email Notifications:Confirmation emails sent to applicants after applying for jobs.
+
+Middleware:Handles authentication, tracks last visits, processes file uploads, and sends confirmation emails.
+
+File Uploads:Resumes stored on the server using a file upload middleware.
+
+Comprehensive Documentation:Original and high-quality code with detailed documentation.

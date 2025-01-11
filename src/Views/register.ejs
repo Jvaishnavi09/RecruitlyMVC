@@ -1,0 +1,95 @@
+<div class="d-flex flex-column justify-content-center m-2 rounded">
+  <h1 class="text-center">Register</h1>
+  <% if(data.length!==0) {%>
+
+  <div class="alert alert-danger" role="alert"><%= data %></div>
+  <%}%>
+  <div class="card w-65 mx-auto px-5 py-1">
+    <div class="card-body">
+      <form action="/register" method="post">
+        <div class="mb-3">
+          <label for="exampleInputName" class="form-label"
+            >Enter your Name :
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="emailHelp"
+            name="name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Enter your Email address :</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Enter your Password :
+          </label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Confirm your Password :
+          </label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password2"
+          />
+        </div>
+        <div class="d-flex">
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="option5"
+            autocomplete="off"
+            value="jobseeker"
+            checked
+          />
+          <label
+            class="btn btnregister rounded-0 rounded-start border"
+            for="option5"
+            >I'm a JobSeeker</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="option6"
+            autocomplete="off"
+            value="recruiter"
+          />
+          <label
+            class="btn btnregister rounded-0 rounded-end border"
+            for="option6"
+            >I'm a Recruiter</label
+          >
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

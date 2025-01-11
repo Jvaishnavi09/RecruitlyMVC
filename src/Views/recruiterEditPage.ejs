@@ -1,0 +1,132 @@
+<div class="container mt-5 rounded">
+  <h1>Edit Job</h1>
+  <form action="/jobs/<%= job.id %>/edit" method="POST">
+    <div class="mb-3">
+      <label for="jobCategory" class="form-label">Select Job Category </label>
+
+      <select class="form-select" id="jobCategory" name="jobCategory" required>
+        <option value="<%= job.jobcategory %>" selected>
+          <%= job.jobcategory %>
+        </option>
+        <% if (jobCate.length > 0) { %> <% jobCate.forEach(jobCat => { %>
+        <option>&nbsp;<%= jobCat %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="jobdesignation" class="form-label"
+        >Select Job Designation
+      </label>
+      <select
+        class="form-select"
+        id="jobdesignation"
+        name="jobdesignation"
+        required
+      >
+        <option value="<%= job.jobdesignation %>" selected>
+          <%= job.jobdesignation %>
+        </option>
+        <% if (jobDesi.length > 0) { %> <% jobDesi.forEach(jobDes => { %>
+        <option>&nbsp;<%= jobDes %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="jobLocation" class="form-label">Select Job Location </label>
+      <select class="form-select" id="jobLocation" name="jobLocation" required>
+        <option value="<%= job.joblocation %>" selected>
+          <%= job.joblocation %>
+        </option>
+        <% if (locations.length > 0) { %> <% locations.forEach(loca => { %>
+        <option>&nbsp;<%= loca %>&nbsp;</option>
+        <% }); %> <% } %>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="companyname" class="form-label">Company Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="companyname"
+        name="companyname"
+        value="<%= job.companyname %>"
+        required
+      />
+    </div>
+    <% const salaryRange =
+    job.salary.replaceAll("","").replaceAll(",","").split('-'); const minSalary
+    = Number(salaryRange[0]); const maxSalary=Number(salaryRange[1]); %>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Minimum Pay : </span>
+      <input
+        type="number"
+        class="form-control"
+        fdprocessedid="55frr9"
+        name="minimumpay"
+        value="<%=minSalary%>"
+        required
+      />
+      <div class="input-group">
+        <input
+          type="number"
+          class="form-control"
+          fdprocessedid="069kft"
+          name="maximumpay"
+          value="<%=maxSalary%>"
+          required
+        />
+        <span class="input-group-text"> : Maximum pay </span>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="applyby" class="form-label">Apply By</label>
+      <input
+        type="date"
+        class="form-control"
+        id="applyby"
+        name="applyby"
+        value="<%= job.applyby %>"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="skillsrequired" class="form-label">Skills Required : </label>
+
+      <select
+        class="form-select"
+        id="skillsrequired"
+        name="skillsrequired"
+        multiple
+        required
+      >
+        <% job.skillsrequired.forEach(skill => { %>
+        <option value="<%= skill %>" selected><%= skill %></option>
+        <% }); %> <% if (skills.length > 0) { %> <% skills.forEach(skill => { %>
+        <option value="<%= skill %>"><%= skill %></option>
+        <% }); %> <% } else { %>
+        <option>No specific skills required</option>
+        <% } %>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="numberofopenings" class="form-label"
+        >Number of Openings</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="numberofopenings"
+        name="numberofopenings"
+        value="<%= job.numberofopenings %>"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Job</button>
+  </form>
+</div>
